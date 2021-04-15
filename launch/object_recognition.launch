@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="use_cad_matching" default="true" />
+    <arg name="use_roi" default="false" />
+
+    <arg name="use_photoneo" default="false" />
+    <arg name="use_asus" default="false" />
+    <arg name="use_publisher" default="true" />
+
+    <include file="$(find object_recognition_skill_server)/launch/object_recognition.launch" >
+        <arg name="load_initial_pose_estimation_pipeline_using_cloud_matching" default="$(arg use_cad_matching)" />
+
+        <arg name="yaml_configuration_filters_filename" default="$(find mimic_grasping)/config/perception/filters.yaml" />
+        <arg name="yaml_configuration_filters_cad_filename" default="$(find mimic_grasping)/config/perception/filters_cad.yaml" />
+        <arg name="yaml_configuration_filters_pca_filename" default="$(find mimic_grasping)/config/perception/filters_pca.yaml" if="$(eval use_asus and not use_cad_matching)" />
+        <arg name="yaml_configuration_filters_roi_filename" default="$(find mimic_grasping)/config/perception/filters_roi.yaml" if="$(arg use_roi)" />
+        <arg name="yaml_configuration_curvature_estimators_filename" default="$(find mimic_grasping)/config/perception/curvature_estimators.yaml" />
+        <arg name="yaml_configuration_normal_estimators_filename" default="$(find mimic_grasping)/config/perception/normal_estimators.yaml" />
+        <arg name="yaml_configuration_keypoint_detectors_filename" default="$(find mimic_grasping)/config/perception/keypoint_detectors.yaml" />
+
+        <arg name="ambient_pointcloud_topic" default="/camera/depth_registered/points" if="$(arg use_photoneo)" />
+        <arg name="ambient_pointcloud_topic" default="/camera/depth/points" if="$(arg use_asus)" />
+ 	      <arg name="ambient_pointcloud_topic" default="/publisher/depth/points" if="$(arg use_publisher)" />
+
+        <arg name="reference_pointcloud_filename" default="$(find mimic_grasping)/models/single_side_bracket.ply"/>
+
+    </include>
+
+</launch>

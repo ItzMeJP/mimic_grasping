@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="use_cad_matching" default="true" />
+
+    <arg name="use_photoneo" default="false" />
+    <arg name="use_asus" default="false" />
+    <arg name="use_publisher" default="true" />
+
+    <arg name="rviz" default="true" />
+
+
+    <include file="$(find mimic_grasping)/launch/tfs.launch" />
+    <include file="$(find mimic_grasping)/launch/tfs_photoneo.launch" if="$(arg use_photoneo)" />
+    <include file="$(find mimic_grasping)/launch/tfs_asus.launch" if="$(arg use_asus)" />
+    <include file="$(find mimic_grasping)/launch/tfs_pc_publisher.launch" if="$(arg use_publisher)" />
+
+    <include file="$(find mimic_grasping)/launch/asus_xtion.launch" if="$(arg use_asus)" />
+    <include file="$(find mimic_grasping)/launch/phoxi_camera.launch" if="$(arg use_photoneo)" />
+    <include file="$(find mimic_grasping)/launch/point_cloud_publisher.launch" if="$(arg use_publisher)" />
+
+    <include file="$(find mimic_grasping)/launch/object_recognition.launch" >
+        <arg name="use_cad_matching" default="$(arg use_cad_matching)" />
+        <arg name="use_photoneo" default="$(arg use_photoneo)" />
+        <arg name="use_asus" default="$(arg use_asus)" />
+        <arg name="use_publisher" default="$(arg use_publisher)" />
+    </include>
+
+
+    <include file="$(find mimic_grasping)/launch/rviz.launch" if="$(arg rviz)"/>
+
+
+
+</launch>

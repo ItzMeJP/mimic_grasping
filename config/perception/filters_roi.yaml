@@ -1,0 +1,15 @@
+filters:
+    ambient_pointcloud_custom_frame:
+        custom_frame_id: 'camera_base_link'
+        0_crop_box:
+            box_min_x: 0.32
+            box_min_y: -0.12
+            box_min_z: -0.13
+            box_max_x: 0.95
+            box_max_y: 0.12
+            box_max_z: 0.13
+            box_rotation_roll: 0.0
+            box_rotation_pitch: 0.0
+            box_rotation_yaw: 0.0
+            invert_selection: false
+            filtered_cloud_publish_topic: 'filtered_pointcloud_cropbox_camera_base_link'

@@ -2,9 +2,9 @@
 
   <!-- Publish point cloud from file -->
   <node pkg="point_cloud_io" type="read" name="read" output="screen">
-    <param name="file_path" value="$(find mimic_grasping)/models/env_single_side_bracket.ply" />
+    <param name="file_path" value="$(find mimic_grasping)/models/single_side_bracket.ply" />
     <param name="topic"     value="/publisher/depth/points" />
-    <param name="frame"     value="camera_link" />
+    <param name="frame"     value="env_link" />
     <param name="rate"      value="1.0" />
   </node>
 

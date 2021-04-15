@@ -5,8 +5,10 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /Status1
         - /TF1/Frames1
         - /Object recognition1
+        - /Object recognition1/Reference point cloud with curvature1
       Splitter Ratio: 0.492063493
     Tree Height: 876
   - Class: rviz/Selection
@@ -28,7 +30,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: Clusters selected
+    SyncSource: Clusters colored
 Toolbars:
   toolButtonStyle: 2
 Visualization Manager:
@@ -84,8 +86,8 @@ Visualization Manager:
         All Enabled: false
         camera_link:
           Value: true
-        map:
-          Value: false
+        env_link:
+          Value: true
         object:
           Value: true
       Marker Scale: 0.200000003
@@ -94,10 +96,11 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          camera_link:
-            object:
-              {}
+        camera_link:
+          env_link:
+            {}
+          object:
+            {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -125,7 +128,7 @@ Visualization Manager:
       Size (Pixels): 1
       Size (m): 0.000500000024
       Style: Points
-      Topic: /camera/depth_registered/points
+      Topic: /publisher/depth/points
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -730,7 +733,7 @@ Visualization Manager:
           Color: 80; 241; 0
           Color Transformer: FlatColor
           Decay Time: 0
-          Enabled: false
+          Enabled: true
           Invert Rainbow: false
           Max Color: 255; 255; 255
           Max Intensity: 4096
@@ -747,7 +750,7 @@ Visualization Manager:
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
-          Value: false
+          Value: true
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
@@ -812,9 +815,9 @@ Visualization Manager:
       Name: Object recognition
   Enabled: true
   Global Options:
-    Background Color: 0; 0; 0
+    Background Color: 138; 138; 138
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: camera_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -835,25 +838,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.492316544
+      Distance: 0.436119795
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.141853139
-        Y: -0.00155094801
-        Z: 0.066973716
+        X: 0.101824418
+        Y: 0.105114639
+        Z: 0.066118069
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.299797624
+      Pitch: 0.579797566
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.15879774
+      Yaw: 2.38880038
     Saved: ~
 Window Geometry:
   Displays:

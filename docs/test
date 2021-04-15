@@ -1,0 +1,20 @@
+roslaunch mimic_grasping run.launch
+
+rostopic pub /object_recognition/ObjectRecognitionSkill/goal object_recognition_skill_msgs/ObjectRecognitionSkillActionGoal "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+goal_id:
+  stamp:
+    secs: 0
+    nsecs: 0
+  id: ''
+goal:
+  objectModel: '/home/joaopedro/ros_ws/catkin_bin_picking_ws/src/mimic_grasping/models/single_side_bracket.ply'
+  clusterIndex: 0"
+
+https://github.com/inesc-tec-robotics/dynamic_robot_localization#installation-from-source
+
+https://github.com/carlosmccosta/object_recognition

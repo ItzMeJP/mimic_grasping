@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
 
-  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_publisher_link" args="-0.3 0 0 0 0 0 map camera_link 100" />
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_publisher_link" args="0.3 0 0 0 -1.57 0 camera_link env_link 100" />
 
 </launch>

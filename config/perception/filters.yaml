@@ -50,19 +50,19 @@ filters:
         #     invert_selection: false
         #     filtered_cloud_publish_topic: 'filtered_pointcloud_statistical_outlier_removal_1'
     ambient_pointcloud_filters_after_normal_estimation:
-        1_plane_segmentation:
-            sample_consensus_method: "SAC_RANSAC"                   # SAC_RANSAC | SAC_LMEDS | SAC_MSAC | SAC_RRANSAC | SAC_RMSAC | SAC_MLESAC | SAC_PROSAC
-            use_surface_normals: true
-            sample_consensus_maximum_distance_of_sample_to_plane: 0.005
-            sample_consensus_normals_difference_weight: 0.07
-            sample_consensus_number_of_iterations: 1000
-            sample_consensus_probability_of_sample_not_be_an_outlier: 0.2
-            plane_convex_hull_scaling_factor: 3.0
-            segmentation_minimum_distance_to_plane: 0.006
-            segmentation_maximum_distance_to_plane: 0.2
-            plane_inliers_cloud_publish_topic: 'filtered_pointcloud_plane_segmentation_inliers'
-            plane_inliers_convex_hull_cloud_publish_topic: 'filtered_pointcloud_plane_segmentation_inliers_convex_hull'
-            filtered_cloud_publish_topic: 'filtered_pointcloud_plane_segmentation'
+        #1_plane_segmentation:
+        #    sample_consensus_method: "SAC_RANSAC"                   # SAC_RANSAC | SAC_LMEDS | SAC_MSAC | SAC_RRANSAC | SAC_RMSAC | SAC_MLESAC | SAC_PROSAC
+        #    use_surface_normals: true
+        #    sample_consensus_maximum_distance_of_sample_to_plane: 0.005
+        #    sample_consensus_normals_difference_weight: 0.07
+        #    sample_consensus_number_of_iterations: 1000
+        #    sample_consensus_probability_of_sample_not_be_an_outlier: 0.2
+        #    plane_convex_hull_scaling_factor: 3.0
+        #    segmentation_minimum_distance_to_plane: 0.006
+        #    segmentation_maximum_distance_to_plane: 0.2
+        #    plane_inliers_cloud_publish_topic: 'filtered_pointcloud_plane_segmentation_inliers'
+        #    plane_inliers_convex_hull_cloud_publish_topic: 'filtered_pointcloud_plane_segmentation_inliers_convex_hull'
+        #    filtered_cloud_publish_topic: 'filtered_pointcloud_plane_segmentation'
         2_random_sample:
             number_of_random_samples: 6000
             invert_sampling: false

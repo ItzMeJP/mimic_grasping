@@ -1,6 +1,6 @@
 filters:
     ambient_pointcloud_filters_after_normal_estimation:
-        5_region_growing:
+        1_region_growing:
             use_pointcloud_rgb_information: false                   # If true, [pcl::RegionGrowingRGB] will be used. Otherwise [pcl::RegionGrowing]
             min_cluster_size: 200                                   # Regions with less than [min_cluster_size] will be discarded
             max_cluster_size: 2147483647                            # std::numeric_limits<int>::max()

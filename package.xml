@@ -53,17 +53,17 @@
   <!--build_depend>photoneo_skill_server</build_depend-->
   <build_depend>point_cloud_io</build_depend>
   <build_depend>tf</build_depend>
-  <build_depend>zed_wrapper</build_depend>
+  <!--build_depend>zed_wrapper</build_depend-->
   <build_export_depend>object_recognition_skill_server</build_export_depend>
   <!--build_export_depend>photoneo_skill_server</build_export_depend-->
   <build_export_depend>point_cloud_io</build_export_depend>
   <build_export_depend>tf</build_export_depend>
-  <build_export_depend>zed_wrapper</build_export_depend>
+  <!--build_export_depend>zed_wrapper</build_export_depend-->
   <exec_depend>object_recognition_skill_server</exec_depend>
   <!--exec_depend>photoneo_skill_server</exec_depend-->
   <exec_depend>point_cloud_io</exec_depend>
   <exec_depend>tf</exec_depend>
-  <exec_depend>zed_wrapper</exec_depend>
+  <!--exec_depend>zed_wrapper</exec_depend-->
 
 
   <!-- The export tag contains other, unspecified, tags -->

@@ -12,7 +12,7 @@ goal_id:
     nsecs: 0
   id: ''
 goal:
-  objectModel: '/home/joaopedro/ros_ws/catkin_bin_picking_ws/src/mimic_grasping/models/single_side_bracket.ply'
+  objectModel: '/home/joaopedro/ros_ws/ws_picking/src/mimic_grasping/models/single_side_bracket.ply'
   clusterIndex: 0"
 
 https://github.com/inesc-tec-robotics/dynamic_robot_localization#installation-from-source

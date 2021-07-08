@@ -2,33 +2,39 @@
 <launch>
 
     <arg name="use_cad_matching" default="true" />
+    <arg name="namespace" default="object_recognition" />
 
     <arg name="use_photoneo" default="false" />
     <arg name="use_asus" default="false" />
     <arg name="use_publisher" default="true" />
+    <arg name="enable_respawn" default="false" />
 
     <arg name="rviz" default="true" />
 
+    <group ns="$(arg namespace)">
 
-    <include file="$(find mimic_grasping)/launch/tfs.launch" />
-    <include file="$(find mimic_grasping)/launch/tfs_photoneo.launch" if="$(arg use_photoneo)" />
-    <include file="$(find mimic_grasping)/launch/tfs_asus.launch" if="$(arg use_asus)" />
-    <include file="$(find mimic_grasping)/launch/tfs_pc_publisher.launch" if="$(arg use_publisher)" />
+      <include file="$(find mimic_grasping)/launch/tfs.launch" />
+      <include file="$(find mimic_grasping)/launch/tfs_photoneo.launch" if="$(arg use_photoneo)" />
+      <include file="$(find mimic_grasping)/launch/tfs_asus.launch" if="$(arg use_asus)" />
+      <include file="$(find mimic_grasping)/launch/tfs_pc_publisher.launch" if="$(arg use_publisher)" />
 
-    <include file="$(find mimic_grasping)/launch/asus_xtion.launch" if="$(arg use_asus)" />
-    <include file="$(find mimic_grasping)/launch/phoxi_camera.launch" if="$(arg use_photoneo)" />
-    <include file="$(find mimic_grasping)/launch/point_cloud_publisher.launch" if="$(arg use_publisher)" />
+      <include file="$(find mimic_grasping)/launch/asus_xtion.launch" if="$(arg use_asus)" />
+      <include file="$(find mimic_grasping)/launch/phoxi_camera.launch" if="$(arg use_photoneo)" />
+      <include file="$(find mimic_grasping)/launch/point_cloud_publisher.launch" if="$(arg use_publisher)" />
 
-    <include file="$(find mimic_grasping)/launch/object_recognition.launch" >
-        <arg name="use_cad_matching" default="$(arg use_cad_matching)" />
-        <arg name="use_photoneo" default="$(arg use_photoneo)" />
-        <arg name="use_asus" default="$(arg use_asus)" />
-        <arg name="use_publisher" default="$(arg use_publisher)" />
+    </group>
+
+    <include file="$(find mimic_grasping)/launch/object_recognition.launch">
+      <arg name="namespace" default="$(arg namespace)" />
+      <arg name="use_photoneo" default="$(arg use_photoneo)" />
+      <arg name="use_asus" default="$(arg use_asus)" />
+      <arg name="use_publisher" default="$(arg use_publisher)" />
+      <arg name="enable_respawn" default="$(arg enable_respawn)" />
     </include>
 
-
-    <include file="$(find mimic_grasping)/launch/rviz.launch" if="$(arg rviz)"/>
-
+    <group ns="$(arg namespace)">
+      <include file="$(find mimic_grasping)/launch/rviz.launch" if="$(arg rviz)" />
+    </group>
 
 
 </launch>

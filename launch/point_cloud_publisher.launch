@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
 
   <!-- Publish point cloud from file -->
@@ -5,7 +6,7 @@
     <param name="file_path" value="$(find mimic_grasping)/models/single_side_bracket.ply" />
     <param name="topic"     value="/publisher/depth/points" />
     <param name="frame"     value="env_link" />
-    <param name="rate"      value="1.0" />
+    <param name="rate"      value="0.5" />
   </node>
 
 </launch>

@@ -7,10 +7,11 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1/Frames1
+        - /Sensor data1
         - /Object recognition1
         - /Object recognition1/Reference point cloud with curvature1
-      Splitter Ratio: 0.492063493
-    Tree Height: 876
+      Splitter Ratio: 0.4920634925365448
+    Tree Height: 863
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -19,7 +20,7 @@ Panels:
       - /2D Nav Goal1
       - /Publish Point1
     Name: Tool Properties
-    Splitter Ratio: 0.588679016
+    Splitter Ratio: 0.5886790156364441
   - Class: rviz/Views
     Expanded:
       - /Current View1
@@ -30,26 +31,29 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: Clusters colored
+    SyncSource: Sensor data
+Preferences:
+  PromptSaveOnExit: true
 Toolbars:
   toolButtonStyle: 2
 Visualization Manager:
   Class: ""
   Displays:
-    - Class: rviz/Axes
+    - Alpha: 1
+      Class: rviz/Axes
       Enabled: true
-      Length: 0.0199999996
+      Length: 0.019999999552965164
       Name: Axes
-      Radius: 0.00150000001
+      Radius: 0.001500000013038516
       Reference Frame: <Fixed Frame>
       Value: true
     - Alpha: 1
-      Cell Size: 0.0500000007
+      Cell Size: 0.05000000074505806
       Class: rviz/Grid
       Color: 81; 122; 122
       Enabled: true
       Line Style:
-        Line Width: 0.0299999993
+        Line Width: 0.029999999329447746
         Value: Lines
       Name: Grid
       Normal Cell Count: 0
@@ -67,7 +71,7 @@ Visualization Manager:
       Color: 255; 0; 0
       Enabled: true
       Line Style:
-        Line Width: 0.0299999993
+        Line Width: 0.029999999329447746
         Value: Lines
       Name: Grid M
       Normal Cell Count: 0
@@ -88,26 +92,40 @@ Visualization Manager:
           Value: true
         env_link:
           Value: true
+        map:
+          Value: true
         object:
           Value: true
-      Marker Scale: 0.200000003
+        object__feature_matching:
+          Value: true
+        object__intermediate_point_matching:
+          Value: true
+        object__point_matching:
+          Value: true
+      Marker Alpha: 1
+      Marker Scale: 0.20000000298023224
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        camera_link:
+        map:
+          camera_link:
+            object:
+              {}
+            object__feature_matching:
+              object__intermediate_point_matching:
+                object__point_matching:
+                  {}
           env_link:
-            {}
-          object:
             {}
       Update Interval: 0
       Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 0.081196785
-        Min Value: -0.0690456629
+        Max Value: 0.08119678497314453
+        Min Value: -0.06904566287994385
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -115,24 +133,22 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: RGB8
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 4096
       Min Color: 0; 0; 0
-      Min Intensity: 0
       Name: Sensor data
       Position Transformer: XYZ
       Queue Size: 1
       Selectable: true
       Size (Pixels): 1
-      Size (m): 0.000500000024
+      Size (m): 0.0005000000237487257
       Style: Points
       Topic: /publisher/depth/points
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Class: rviz/Group
       Displays:
         - Alpha: 1
@@ -147,24 +163,22 @@ Visualization Manager:
           Color: 0; 170; 0
           Color Transformer: RGB8
           Decay Time: 0
-          Enabled: true
+          Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Reference point cloud with curvature
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 4
-          Size (m): 0.00999999978
+          Size (m): 0.009999999776482582
           Style: Points
           Topic: /object_recognition/reference_pointcloud
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
-          Value: true
+          Value: false
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
@@ -180,15 +194,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Reference point cloud keypoints
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 2
-          Size (m): 0.00400000019
+          Size (m): 0.004000000189989805
           Style: Spheres
           Topic: /object_recognition/reference_keypoints
           Unreliable: false
@@ -210,15 +222,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Sensor data cropbox
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 2
-          Size (m): 0.00499999989
+          Size (m): 0.004999999888241291
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud_cropbox
           Unreliable: false
@@ -228,8 +238,8 @@ Visualization Manager:
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 0.0921050236
-            Min Value: 0.00200060941
+            Max Value: 0.09210502356290817
+            Min Value: 0.002000609412789345
             Value: true
           Axis: Z
           Channel Name: intensity
@@ -240,15 +250,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Voxel grid
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00300000003
+          Size (m): 0.003000000026077032
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud_voxel_grid
           Unreliable: false
@@ -270,15 +278,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: RandomSample1
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00300000003
+          Size (m): 0.003000000026077032
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud_random_sample
           Unreliable: false
@@ -300,15 +306,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Plane segmentation inliers
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00300000003
+          Size (m): 0.003000000026077032
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud_plane_segmentation_inliers
           Unreliable: false
@@ -330,15 +334,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Plane segmentation inliers convex hull
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00749999983
+          Size (m): 0.007499999832361937
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud_plane_segmentation_inliers_convex_hull
           Unreliable: false
@@ -360,15 +362,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Plane segmentation
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00200000009
+          Size (m): 0.0020000000949949026
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud_plane_segmentation
           Unreliable: false
@@ -378,8 +378,8 @@ Visualization Manager:
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 0.0886791274
-            Min Value: 0.00200060941
+            Max Value: 0.08867912739515305
+            Min Value: 0.002000609412789345
             Value: true
           Axis: Z
           Channel Name: intensity
@@ -390,26 +390,24 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: RadiusOutlierRemoval
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00300000003
+          Size (m): 0.003000000026077032
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud_radius_outlier_removal
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
           Value: false
-        - Alpha: 0.699999988
+        - Alpha: 0.699999988079071
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 0.0886791274
-            Min Value: 0.00207760837
+            Max Value: 0.08867912739515305
+            Min Value: 0.0020776083692908287
             Value: true
           Axis: Z
           Channel Name: intensity
@@ -420,15 +418,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: StatisticalOutlierRemoval
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00300000003
+          Size (m): 0.003000000026077032
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud_statistical_outlier_removal
           Unreliable: false
@@ -450,15 +446,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: RandomSample2
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00300000003
+          Size (m): 0.003000000026077032
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud_random_sample_2
           Unreliable: false
@@ -480,15 +474,13 @@ Visualization Manager:
           Enabled: true
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Clusters colored
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00300000003
+          Size (m): 0.003000000026077032
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud_clusters_colored
           Unreliable: false
@@ -510,15 +502,13 @@ Visualization Manager:
           Enabled: true
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Clusters selected
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00499999989
+          Size (m): 0.004999999888241291
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud_clustering
           Unreliable: false
@@ -540,15 +530,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: RandomSample3
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00300000003
+          Size (m): 0.003000000026077032
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud_random_sample_3
           Unreliable: false
@@ -558,8 +546,8 @@ Visualization Manager:
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 0.0892726481
-            Min Value: 0.00206762552
+            Max Value: 0.0892726480960846
+            Min Value: 0.0020676255226135254
             Value: true
           Axis: Z
           Channel Name: intensity
@@ -570,26 +558,24 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Filtered cloud curvature
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00300000003
+          Size (m): 0.003000000026077032
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
           Value: false
-        - Alpha: 0.699999988
+        - Alpha: 0.699999988079071
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 0.0892726481
-            Min Value: 0.00206762552
+            Max Value: 0.0892726480960846
+            Min Value: 0.0020676255226135254
             Value: true
           Axis: Z
           Channel Name: intensity
@@ -600,15 +586,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Filtered cloud
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00300000003
+          Size (m): 0.003000000026077032
           Style: Spheres
           Topic: /object_recognition/filtered_pointcloud
           Unreliable: false
@@ -630,15 +614,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Keypoints
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 5
-          Size (m): 0.00600000005
+          Size (m): 0.006000000052154064
           Style: Spheres
           Topic: /object_recognition/ambient_keypoints
           Unreliable: false
@@ -646,22 +628,23 @@ Visualization Manager:
           Use rainbow: true
           Value: false
         - Alpha: 1
-          Arrow Length: 0.0500000007
-          Axes Length: 0.300000012
-          Axes Radius: 0.00999999978
+          Arrow Length: 0.05000000074505806
+          Axes Length: 0.30000001192092896
+          Axes Radius: 0.009999999776482582
           Class: rviz/PoseArray
           Color: 255; 25; 0
           Enabled: false
-          Head Length: 0.00999999978
-          Head Radius: 0.00999999978
+          Head Length: 0.009999999776482582
+          Head Radius: 0.009999999776482582
           Name: Initial pose estimation
-          Shaft Length: 0.0199999996
-          Shaft Radius: 0.00300000003
+          Queue Size: 10
+          Shaft Length: 0.019999999552965164
+          Shaft Radius: 0.003000000026077032
           Shape: Arrow (3D)
           Topic: /object_recognition/localization_initial_pose_estimations
           Unreliable: false
           Value: false
-        - Alpha: 0.899999976
+        - Alpha: 0.8999999761581421
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
             Max Value: 10
@@ -676,22 +659,20 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Initial alignment reference cloud
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00300000003
+          Size (m): 0.003000000026077032
           Style: Spheres
           Topic: /object_recognition/initial_alignment_reference_cloud
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
           Value: false
-        - Alpha: 0.899999976
+        - Alpha: 0.8999999761581421
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
             Max Value: 10
@@ -706,15 +687,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Intermediate alignment reference cloud
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00300000003
+          Size (m): 0.003000000026077032
           Style: Spheres
           Topic: /object_recognition/intermediate_alignment_reference_cloud
           Unreliable: false
@@ -736,15 +715,13 @@ Visualization Manager:
           Enabled: true
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: Final alignment reference cloud
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00400000019
+          Size (m): 0.004000000189989805
           Style: Spheres
           Topic: /object_recognition/final_alignment_reference_cloud
           Unreliable: false
@@ -766,15 +743,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: PointCloud2 inliers
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00999999978
+          Size (m): 0.009999999776482582
           Style: Points
           Topic: /object_recognition/aligned_pointcloud_inliers
           Unreliable: false
@@ -796,15 +771,13 @@ Visualization Manager:
           Enabled: false
           Invert Rainbow: false
           Max Color: 255; 255; 255
-          Max Intensity: 4096
           Min Color: 0; 0; 0
-          Min Intensity: 0
           Name: PointCloud2 outliers
           Position Transformer: XYZ
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.00999999978
+          Size (m): 0.009999999776482582
           Style: Points
           Topic: /object_recognition/aligned_pointcloud_outliers
           Unreliable: false
@@ -828,7 +801,10 @@ Visualization Manager:
     - Class: rviz/FocusCamera
     - Class: rviz/Measure
     - Class: rviz/SetInitialPose
+      Theta std deviation: 0.2617993950843811
       Topic: /initialpose
+      X std deviation: 0.5
+      Y std deviation: 0.5
     - Class: rviz/SetGoal
       Topic: /move_base_simple/goal
     - Class: rviz/PublishPoint
@@ -838,33 +814,33 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.436119795
+      Distance: 0.7941235899925232
       Enable Stereo Rendering:
-        Stereo Eye Separation: 0.0599999987
+        Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
+      Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.101824418
-        Y: 0.105114639
-        Z: 0.066118069
+        X: 0.25345736742019653
+        Y: 0.22417724132537842
+        Z: 0.08937821537256241
       Focal Shape Fixed Size: true
-      Focal Shape Size: 0.0500000007
+      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
-      Near Clip Distance: 0.00999999978
-      Pitch: 0.579797566
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.5397976040840149
       Target Frame: <Fixed Frame>
-      Value: Orbit (rviz)
-      Yaw: 2.38880038
+      Yaw: 2.3087985515594482
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1056
+  Height: 1043
   Hide Left Dock: true
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd0000000400000000000001ef0000051dfc020000001ffb0000001200530065006c0065006300740069006f006e000000004a0000051d0000006300fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000100049006d00610067006500200069007200000001390000010e0000000000000000fb000000100049006d0061006700650020006900720100000353000000af0000000000000000fb000000100049006d0061006700650020004900520000000335000000cd0000000000000000fb0000001a0043006f006e0066006900640065006e00630065004d006100700000000041000002050000000000000000fb00000012004e006f0072006d0061006c004d006100700000000290000000a00000000000000000fb0000000e00540065007800740075007200650000000041000001e90000000000000000fb000000100049006d00610067006500520047004200000000410000006a0000000000000000fb000000140049006d006100670065004400650070007400680000000041000000870000000000000000fb000000100049006d00610067006500490052003100000000410000009d0000000000000000fb000000100049006d00610067006500490052003200000000e4000000a40000000000000000fb000000180049006d006100670065004300680041007200750063006f01000002c0000001420000000000000000fb000000220049006d006100670065004300680061007200750063006f0043006f006c006f00720100000041000001d60000000000000000fb0000001c0049006d00610067006500490052004300680061007200750063006f0000000148000000d80000000000000000fb0000001e0049006d006100670065004300680061007200750063006f004900520031000000026b000000cb0000000000000000fb0000001e0049006d006100670065004300680061007200750063006f004900520032000000033c000000c60000000000000000fb000000140049006d0061006700650043006f006c006f007200000000410000012b0000000000000000fb000000180049006d0061006700650043006f006c006f0072004800440000000247000000f70000000000000000fb000000140049006d006100670065004400650070007400680000000372000000900000000000000000fb0000000e0049006d00610067006500490052020000000a00000073000003e500000310fb000000220049006d006100670065004300680061007200750063006f0043006f006c006f00720000000041000001a90000000000000000fb000000140049006d0061006700650044006500700074006800000001b60000007c0000000000000000fb0000000e0049006d006100670065004900520200000066000000430000068f000003ddfb000000140049006d0061006700650043006f006c006f007200000001b6000000cc0000000000000000fb0000001c0049006d00610067006500490052004300680061007200750063006f02000003f0000000720000035f00000310fb000000220049006d0061006700650043006f006c006f0072004300680061007200750063006f010000021d000001e500000000000000000000000100000277000003d5fc0200000004fc00000028000003d5000000ff01000020fa000000000100000002fb000000100044006900730070006c0061007900730100000000ffffffff0000016a00fffffffb0000000a0056006900650077007301000004c8000002770000010f00fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730000000332000000d00000006300fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007301000001be000002440000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b20000000000000000000000020000078000000154fc0100000007fb000000120049006d00610067006500200052004700420100000000000001a80000000000000000fb000000160049006d00610067006500200044006500700074006801000001ae000001990000000000000000fb000000160049006d00610067006500200063006f006c006f00720100000000000003d50000000000000000fb000000160049006d00610067006500200064006500700074006801000003db000003a50000000000000000fb000000160049006d00610067006500200063006f006c006f0072010000034e000002370000000000000000fb000000160049006d006100670065002000640065007000740068010000058b000001f50000000000000000fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000077e0000003efc0100000002fb0000000800540069006d006500000000000000077e0000028800fffffffb0000000800540069006d00650100000000000004500000000000000000000004c2000003d500000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001ef0000051dfc020000001ffb0000001200530065006c0065006300740069006f006e000000004a0000051d0000005c00fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb000000100049006d00610067006500200069007200000001390000010e0000000000000000fb000000100049006d0061006700650020006900720100000353000000af0000000000000000fb000000100049006d0061006700650020004900520000000335000000cd0000000000000000fb0000001a0043006f006e0066006900640065006e00630065004d006100700000000041000002050000000000000000fb00000012004e006f0072006d0061006c004d006100700000000290000000a00000000000000000fb0000000e00540065007800740075007200650000000041000001e90000000000000000fb000000100049006d00610067006500520047004200000000410000006a0000000000000000fb000000140049006d006100670065004400650070007400680000000041000000870000000000000000fb000000100049006d00610067006500490052003100000000410000009d0000000000000000fb000000100049006d00610067006500490052003200000000e4000000a40000000000000000fb000000180049006d006100670065004300680041007200750063006f01000002c0000001420000000000000000fb000000220049006d006100670065004300680061007200750063006f0043006f006c006f00720100000041000001d60000000000000000fb0000001c0049006d00610067006500490052004300680061007200750063006f0000000148000000d80000000000000000fb0000001e0049006d006100670065004300680061007200750063006f004900520031000000026b000000cb0000000000000000fb0000001e0049006d006100670065004300680061007200750063006f004900520032000000033c000000c60000000000000000fb000000140049006d0061006700650043006f006c006f007200000000410000012b0000000000000000fb000000180049006d0061006700650043006f006c006f0072004800440000000247000000f70000000000000000fb000000140049006d006100670065004400650070007400680000000372000000900000000000000000fb0000000e0049006d00610067006500490052020000000a00000073000003e500000310fb000000220049006d006100670065004300680061007200750063006f0043006f006c006f00720000000041000001a90000000000000000fb000000140049006d0061006700650044006500700074006800000001b60000007c0000000000000000fb0000000e0049006d006100670065004900520200000066000000430000068f000003ddfb000000140049006d0061006700650043006f006c006f007200000001b6000000cc0000000000000000fb0000001c0049006d00610067006500490052004300680061007200750063006f02000003f0000000720000035f00000310fb000000220049006d0061006700650043006f006c006f0072004300680061007200750063006f010000021d000001e500000000000000000000000100000277000003b9fc0200000004fc0000003d000003b9000000e60100001cfa000000000100000002fb000000100044006900730070006c0061007900730100000000ffffffff0000015600fffffffb0000000a0056006900650077007301000004c8000002770000010000fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730000000332000000d00000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007301000001be000002440000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b20000000000000000000000020000078000000154fc0100000007fb000000120049006d00610067006500200052004700420100000000000001a80000000000000000fb000000160049006d00610067006500200044006500700074006801000001ae000001990000000000000000fb000000160049006d00610067006500200063006f006c006f00720100000000000003d50000000000000000fb000000160049006d00610067006500200064006500700074006801000003db000003a50000000000000000fb000000160049006d00610067006500200063006f006c006f0072010000034e000002370000000000000000fb000000160049006d006100670065002000640065007000740068010000058b000001f50000000000000000fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000077e0000003efc0100000002fb0000000800540069006d006500000000000000077e000002eb00fffffffb0000000800540069006d0065010000000000000450000000000000000000000503000003b900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: true
   Time:
@@ -873,6 +849,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1855
-  X: 1985
-  Y: 24
+  Width: 1920
+  X: 1920
+  Y: 0

@@ -12,7 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   #photoneo_skill_server
   point_cloud_io
   tf
-  zed_wrapper
+  #zed_wrapper
 )
 
 ## System dependencies are found with CMake's conventions

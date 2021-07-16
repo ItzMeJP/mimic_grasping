@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(mimic_grasping
+project(mimic_grasping_ros_interface_package
         VERSION 15.07.2021
         DESCRIPTION
         "")
@@ -28,18 +28,6 @@ find_package(catkin REQUIRED COMPONENTS
         #zed_wrapper
         )
 
-find_package(Eigen3 REQUIRED) # To matrix operations
-find_package(Boost REQUIRED COMPONENTS system thread timer)
-
-## Add other libs that does not have an find_package
-add_library(ht_manipulation SHARED IMPORTED GLOBAL)
-set_property(TARGET ht_manipulation PROPERTY IMPORTED_LOCATION "/usr/local/lib/ht_manipulation/libpose.so")
-add_library(plugin_system_management SHARED IMPORTED GLOBAL)
-set_property(TARGET plugin_system_management PROPERTY IMPORTED_LOCATION "/usr/local/lib/plugin_system_management/libplugin_system_management.so")
-
-# Just to debug the generated plugin
-add_library(debug_plugin SHARED IMPORTED GLOBAL)
-set_property(TARGET debug_plugin PROPERTY IMPORTED_LOCATION "/home/joaopedro/ros_ws/ws_picking/src/mimic_grasping/plugins/libobject_localization_ros.so")
 
 catkin_package(
         CATKIN_DEPENDS
@@ -53,63 +41,3 @@ include_directories(
         include
         ${catkin_INCLUDE_DIRS}
 )
-
-add_library(object_localization_ros SHARED #Shared is to export it latter
-        src/object_recognition_client/obj_localization_ros.cpp
-        )
-
-target_link_libraries(object_localization_ros
-        plugin_system_management
-        ht_manipulation
-        ${CMAKE_THREAD_LIBS_INIT}
-        ${catkin_LIBRARIES}
-        Eigen3::Eigen
-        Boost::thread
-        Boost::timer
-        jsoncpp
-        )
-
-set_target_properties(object_localization_ros PROPERTIES
-        #VERSION ${PROJECT_VERSION}
-        PUBLIC_HEADER "include/object_recognition_client/obj_localization_ros.h"
-        )
-
-configure_file(install_configurations/obj_localization_ros.pc.in obj_localization_ros.pc @ONLY)
-
-install(TARGETS object_localization_ros
-        LIBRARY DESTINATION ${PLUGINS_DIR_FOLDER}
-        PUBLIC_HEADER DESTINATION ${CMAKE_BINARY_DIR}/public_headers/plugins)
-
-install(FILES ${CMAKE_BINARY_DIR}/obj_localization_ros.pc
-        DESTINATION ${CMAKE_BINARY_DIR}/pkgconfig)
-
-add_executable(object_recognition_client_test src/node.cpp)
-
-target_link_libraries(
-        object_recognition_client_test
-        object_localization_ros
-        ${catkin_LIBRARIES}
-        #debug_plugin
-        #plugin_system_management
-        #ht_manipulation
-        #${CMAKE_THREAD_LIBS_INIT}
-        #Eigen3::Eigen
-        #Boost::thread
-        #Boost::timer
-)
-
-add_executable(sub_test src/sub_node.cpp)
-
-target_link_libraries(sub_test
-        object_localization_ros
-        ${catkin_LIBRARIES}
-        #debug_plugin
-        #plugin_system_management
-        #ht_manipulation
-        #${CMAKE_THREAD_LIBS_INIT}
-        #Eigen3::Eigen
-        #Boost::thread
-        #Boost::timer
-)
-
-

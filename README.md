@@ -15,8 +15,13 @@ This package allows the mimic_grasping_server to communicate with ROS pipelines.
 1. [Object Recognition](https://github.com/carlosmccosta/object_recognition)
 
 ## <a name="Dependencies"></a> Dependencies
-1. [ROS](https://www.ros.org/)
-2. [Object Recognition](https://github.com/carlosmccosta/object_recognition)
+1. [ROS](http://wiki.ros.org/ROS/Installation)
+2. [Catkin Tools](https://catkin-tools.readthedocs.io/en/latest/installing.html)
+3. [Phoxi Camera](https://github.com/carlosmccosta/phoxi_camera)
+4. [Photoneo Skill](https://gitlab.inesctec.pt/pmrebelo/photoneo_skill)
+5. [Dynamic Robot Localization](https://github.com/carlosmccosta/dynamic_robot_localization)
+6. [Object Recognition](https://github.com/carlosmccosta/object_recognition)
+7. [Point Cloud IO](https://github.com/carlosmccosta/point_cloud_io)
 
 
 ## <a name="Installation"></a> Installation

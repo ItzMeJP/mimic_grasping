@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find mimic_grasping)/config/rviz.rviz" respawn="false" clear_params="true" output="screen" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find mimic_grasping_ros_interface_package)/config/rviz.rviz" respawn="false" clear_params="true" output="screen" />
 </launch>

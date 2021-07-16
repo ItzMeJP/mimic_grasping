@@ -15,7 +15,7 @@
 
     <arg name="use_segmented_pointcloud" default="false" />
     <arg name="use_pca" default="$(eval use_asus and not use_cad_matching)" />
-    <arg name="reference_pointclouds_database_folder_path" default="$(find mimic_grasping)/models" />
+    <arg name="reference_pointclouds_database_folder_path" default="$(find mimic_grasping_ros_interface_package)/models" />
 
     <arg name="ambient_pointcloud_topic" default="/camera/depth_registered/points" if="$(arg use_photoneo)" />
     <arg name="ambient_pointcloud_topic" default="/camera/depth_registered/points" if="$(arg use_asus)" />
@@ -40,11 +40,11 @@
         <arg name="clustering_module_parameter_server_namespace" default="filters/ambient_pointcloud_feature_registration/3_euclidean_clustering/cluster_selector/" if="$(eval use_cad_matching)" />
         <arg name="clustering_module_parameter_server_namespace" default="filters/ambient_pointcloud_filters_after_normal_estimation/1_region_growing/cluster_selector/" if="$(eval use_pca)" />
 
-        <arg name="yaml_configuration_filters_filename" default="$(find mimic_grasping)/config/perception/filters.yaml" />
-        <arg name="yaml_configuration_filters_euclidean_clustering_filename" default="$(find mimic_grasping)/config/perception/filters_cad.yaml" />
-        <arg name="yaml_configuration_filters_region_growing_filename" default="$(find mimic_grasping)/config/perception/filters_pca.yaml" if="$(arg use_pca)" />
-        <arg name="yaml_configuration_filters_roi_filename" default="$(find mimic_grasping)/config/perception/filters_roi.yaml" if="$(arg use_roi)" />
-        <arg name="yaml_configuration_transformation_validators_filename" default="$(find mimic_grasping)/config/perception/transformation_validators.yaml" />
+        <arg name="yaml_configuration_filters_filename" default="$(find mimic_grasping_ros_interface_package)/config/perception/filters.yaml" />
+        <arg name="yaml_configuration_filters_euclidean_clustering_filename" default="$(find mimic_grasping_ros_interface_package)/config/perception/filters_cad.yaml" />
+        <arg name="yaml_configuration_filters_region_growing_filename" default="$(find mimic_grasping_ros_interface_package)/config/perception/filters_pca.yaml" if="$(arg use_pca)" />
+        <arg name="yaml_configuration_filters_roi_filename" default="$(find mimic_grasping_ros_interface_package)/config/perception/filters_roi.yaml" if="$(arg use_roi)" />
+        <arg name="yaml_configuration_transformation_validators_filename" default="$(find mimic_grasping_ros_interface_package)/config/perception/transformation_validators.yaml" />
 
         <arg name="ambient_pointcloud_topic" default="$(arg ambient_pointcloud_topic)"/>
 

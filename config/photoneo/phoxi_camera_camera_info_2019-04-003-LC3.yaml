@@ -1,0 +1,20 @@
+image_width: 2064
+image_height: 1544
+camera_name: "2019-04-003-LC3"
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [2270.3, 0, 1062.5, 0, 2269.71, 792.312, 0, 0, 1]
+distortion_model: "plumb_bob"
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.124762, 0.198203, -0.00015136, 0.000106813, -0.149119]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [2270.3, 0, 1062.5, 0, 0, 2269.71, 792.312, 0, 0, 0, 1, 0]

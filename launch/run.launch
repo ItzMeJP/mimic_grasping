@@ -8,6 +8,7 @@
     <arg name="use_publisher" default="false" />
     <arg name="use_asus" default="false" /> <!-- Not supported -->
     <arg name="enable_respawn" default="false" />
+    <arg name="scanner_id" default="InstalledExamples-basic-example" />
 
     <arg name="rviz" default="true" />
 
@@ -15,7 +16,9 @@
 
       <group if="$(arg use_photoneo)">
         <include file="$(find mimic_grasping_ros_interface_package)/launch/tfs_photoneo.launch"/>
-        <include file="$(find mimic_grasping_ros_interface_package)/launch/phoxi_camera.launch" />
+        <include file="$(find mimic_grasping_ros_interface_package)/launch/phoxi_camera.launch">
+          <arg name="scanner_id" default="$(arg scanner_id)" />
+        </include>
         <include file="$(find mimic_grasping_ros_interface_package)/launch/run_photoneo_skill.launch"/>
       </group>
 

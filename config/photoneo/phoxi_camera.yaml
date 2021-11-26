@@ -1,4 +1,5 @@
-scanner_id: "2019-04-003-LC3"
+#scanner_id: "2019-04-003-LC3"
+scanner_id: "PhoXi3DScan-jEj-102#"
 frame_id: "camera_gray_optical_frame"
 latch_topics: true
 topic_queue_size: 1

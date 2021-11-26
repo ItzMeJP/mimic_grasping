@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_optical_frame" args="-0.1490687064182732 -0.018488193208937503 0.12434877282091086 -0.052734852314876866 -0.18763489163471184 -0.9102644201668197 0.3652819023315028 tool0_controller camera_gray_optical_frame 100" />
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_link_c" args="0 0 0 0.5 -0.5 0.5 0.5 camera_gray_optical_frame camera_link 100" />
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_base_c1" args="-0.115 0.03 0 0 0.27 0 camera_gray_optical_frame camera_base 100" />
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_base_c2" args="0 0 0 0.5 -0.5 0.5 0.5 camera_base camera_base_link 100" />
+
+</launch>

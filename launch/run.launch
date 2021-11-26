@@ -6,25 +6,35 @@
 
     <arg name="use_photoneo" default="false" />
     <arg name="use_publisher" default="false" />
+    <arg name="use_rsd435" default="false" />
     <arg name="use_asus" default="false" /> <!-- Not supported -->
     <arg name="enable_respawn" default="false" />
-    <arg name="scanner_id" default="InstalledExamples-basic-example" />
+
+
+    <!--arg name="scanner_id" default="InstalledExamples-basic-example" /-->
+    <arg name="scanner_id" default="jEj-102" />
+
 
     <arg name="rviz" default="true" />
 
     <group ns="$(arg namespace)">
 
       <group if="$(arg use_photoneo)">
-        <include file="$(find mimic_grasping_ros_interface_package)/launch/tfs_photoneo.launch"/>
-        <include file="$(find mimic_grasping_ros_interface_package)/launch/phoxi_camera.launch">
+        <include file="$(find mimic_grasping_ros_interface_package)/launch/tfs/tfs_photoneo.launch"/>
+        <include file="$(find mimic_grasping_ros_interface_package)/launch/sensors/phoxi_camera.launch">
           <arg name="scanner_id" default="$(arg scanner_id)" />
         </include>
-        <include file="$(find mimic_grasping_ros_interface_package)/launch/run_photoneo_skill.launch"/>
+        <include file="$(find mimic_grasping_ros_interface_package)/launch/sensors/run_photoneo_skill.launch"/>
       </group>
 
       <group if="$(arg use_publisher)">
-          <include file="$(find mimic_grasping_ros_interface_package)/launch/tfs_pc_publisher.launch"/>
-          <include file="$(find mimic_grasping_ros_interface_package)/launch/point_cloud_publisher.launch"/>
+          <include file="$(find mimic_grasping_ros_interface_package)/launch/tfs/tfs_pc_publisher.launch"/>
+          <include file="$(find mimic_grasping_ros_interface_package)/launch/sensors/point_cloud_publisher.launch"/>
+      </group>
+
+      <group if="$(arg use_rsd435)">
+          <include file="$(find mimic_grasping_ros_interface_package)/launch/tfs/tfs_rsd435.launch"/>
+          <include file="$(find mimic_grasping_ros_interface_package)/launch/sensors/realsense_d435.launch"/>
       </group>
 
     </group>
@@ -34,6 +44,7 @@
       <arg name="use_photoneo" default="$(arg use_photoneo)" />
       <arg name="use_asus" default="$(arg use_asus)" />
       <arg name="use_publisher" default="$(arg use_publisher)" />
+      <arg name="use_rsd435" default="$(arg use_rsd435)" />
       <arg name="enable_respawn" default="$(arg enable_respawn)" />
     </include>
 

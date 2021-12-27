@@ -1,16 +1,26 @@
 filters:
     publish_pointclouds_only_if_there_is_subscribers: false
-    reference_pointcloud:
-        0_voxel_grid:
-            leaf_size_x: 0.001
-            leaf_size_y: 0.001
-            leaf_size_z: 0.001
+    ambient_pointcloud_custom_frame:
+        0_voxel_grid: # Voxel filter na point cloud vinda do sensor
+            leaf_size_x: 0.002
+            leaf_size_y: 0.002
+            leaf_size_z: 0.002
             filter_limit_field_name: 'z'
             filter_limit_min: -5.0
             filter_limit_max: 5.0
             downsample_all_data: true
             save_leaf_layout: false
-    ambient_pointcloud_feature_registration:
+    reference_pointcloud: # Voxel filter na point cloud de referencia (CAD)
+        0_voxel_grid:
+            leaf_size_x: 0.002
+            leaf_size_y: 0.002
+            leaf_size_z: 0.002
+            filter_limit_field_name: 'z'
+            filter_limit_min: -5.0
+            filter_limit_max: 5.0
+            downsample_all_data: true
+            save_leaf_layout: false
+    ambient_pointcloud_feature_registration: # Voxel filter na point cloud para registo
 #        0_hsv_segmentation: # PhotoNeo grayscale image -> can only segment using the HSV value channel
 #            minimum_hue: 0.0
 #            maximum_hue: 360.0
@@ -21,9 +31,9 @@ filters:
 #            invert_segmentation: false
 #            filtered_cloud_publish_topic: 'filtered_pointcloud_hsv_segmentation'
         0_voxel_grid:
-            leaf_size_x: 0.001
-            leaf_size_y: 0.001
-            leaf_size_z: 0.001
+            leaf_size_x: 0.002
+            leaf_size_y: 0.002
+            leaf_size_z: 0.002
             filter_limit_field_name: 'z'
             filter_limit_min: -5.0
             filter_limit_max: 5.0

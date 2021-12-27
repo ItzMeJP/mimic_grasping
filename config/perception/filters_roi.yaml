@@ -2,27 +2,14 @@ filters:
     ambient_pointcloud_custom_frame:
         custom_frame_id: 'cropbox_ref_frame'
         0_crop_box:
-            box_min_x: -0.12
-            box_min_y: -0.12
-            box_min_z: 0.0025
-            box_max_x: 0.12
-            box_max_y: 0.12
-            box_max_z: 0.05
+            box_min_x: -0.16
+            box_min_y: -0.10
+            box_min_z: 0.0
+            box_max_x: 0.16
+            box_max_y: 0.10
+            box_max_z: 0.12
             box_rotation_roll: 0
             box_rotation_pitch: 0
             box_rotation_yaw: 0.0
             invert_selection: false
             filtered_cloud_publish_topic: 'filtered_pointcloud_cropbox'
-#        1_plane_segmentation:
-#            sample_consensus_method: "SAC_RANSAC"                   # SAC_RANSAC | SAC_LMEDS | SAC_MSAC | SAC_RRANSAC | SAC_RMSAC | SAC_MLESAC | SAC_PROSAC
-#            use_surface_normals: false
-#            sample_consensus_maximum_distance_of_sample_to_plane: 0.004
-#            sample_consensus_normals_difference_weight: 0.07
-#            sample_consensus_number_of_iterations: 1000
-#            sample_consensus_probability_of_sample_not_be_an_outlier: 0.2
-#            plane_convex_hull_scaling_factor: 1.4
-#            segmentation_minimum_distance_to_plane: 0.0001
-#            segmentation_maximum_distance_to_plane: 0.005
-#            plane_inliers_cloud_publish_topic: 'filtered_pointcloud_plane_segmentation_inliers'
-#            plane_inliers_convex_hull_cloud_publish_topic: 'filtered_pointcloud_plane_segmentation_inliers_convex_hull'
-#            filtered_cloud_publish_topic: 'filtered_pointcloud_plane_segmentation'

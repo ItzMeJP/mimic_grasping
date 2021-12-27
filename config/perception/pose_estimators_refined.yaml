@@ -1,0 +1,91 @@
+initial_pose_estimators_matchers:
+    initial_pose_estimation_timeout: -1.0
+    publish_pointclouds_only_if_there_is_subscribers: false
+    point_matchers:
+        correspondence_estimation_lookup_table:
+            map_cell_resolution: 0.001
+            map_margin_x: 0.03
+            map_margin_y: 0.03
+            map_margin_z: 0.01
+            map_use_search_tree_when_query_point_is_outside_lookup_table: true
+            map_compute_distance_from_query_point_to_closest_point: false
+            map_initialize_lookup_table_using_euclidean_distance_transform: false
+            sensor_cell_resolution: 0.001
+            sensor_margin_x: 0.03
+            sensor_margin_y: 0.03
+            sensor_margin_z: 0.01
+            sensor_use_search_tree_when_query_point_is_outside_lookup_table: true
+            sensor_compute_distance_from_query_point_to_closest_point: false
+            sensor_initialize_lookup_table_using_euclidean_distance_transform: false
+        #2_iterative_closest_point:
+        2_iterative_closest_point_with_normals:
+            #correspondence_estimation_approach: 'CorrespondenceEstimation'
+            # correspondence_estimation_approach: 'CorrespondenceEstimationLookupTable'
+            correspondence_estimation_approach: 'CorrespondenceEstimationBackProjection' # util para desambiguar, mais lento
+            correspondence_estimation_k: 0
+            correspondence_estimation_normals_angle_filtering_threshold: 50.0
+            correspondence_estimation_normals_angle_penalty_factor: 3.0
+            # transformation_estimation_approach: 'TransformationEstimationPointToPlaneLLSWeighted'
+            max_correspondence_distance: 0.035
+            convergence_time_limit_seconds: 1.0
+            convergence_rotation_threshold: 0.99999 # cos_angle = 0.99999 -> 0.256 degrees
+            convergence_max_iterations_similar_transforms: 3
+            transformation_epsilon: 0.0000001 # sum of squared translations offsets (between registrations)
+            euclidean_fitness_epsilon: 0.000001
+            max_number_of_registration_iterations: 300
+            max_number_of_ransac_iterations: 0
+            ransac_outlier_rejection_threshold: 0.02
+            match_only_keypoints: false
+            display_cloud_aligment: false
+            maximum_number_of_displayed_correspondences: 0
+            rotation_epsilon: 0.002
+            correspondence_randomness: 50
+            maximum_optimizer_iterations: 100
+            use_reciprocal_correspondences: false
+            use_symmetric_objective_cost_function: false
+            ensure_normals_with_same_direction_when_using_symmetric_objective_cost_function: false
+            reference_cloud_publish_topic: 'intermediate_alignment_reference_cloud'
+            convergence_time_limit_seconds_as_mean_convergence_time_percentage: -1.0
+            minimum_number_of_convergence_time_measurements_to_adjust_convergence_time_limit: -1
+        # 3_iterative_closest_point_non_linear:
+        3_iterative_closest_point:
+        # 3_iterative_closest_point_with_normals:
+        # 3_iterative_closest_point_generalized:
+            correspondence_estimation_approach: 'CorrespondenceEstimation'
+            # correspondence_estimation_approach: 'CorrespondenceEstimationLookupTable'
+            # correspondence_estimation_approach: 'CorrespondenceEstimationBackProjection' # necessita da normal
+            correspondence_estimation_k: 0
+            correspondence_estimation_normals_angle_filtering_threshold: 50.0
+            correspondence_estimation_normals_angle_penalty_factor: 3.0
+            # transformation_estimation_approach: 'TransformationEstimationPointToPlaneLLSWeighted'
+            max_correspondence_distance: 0.005
+            convergence_time_limit_seconds: 0.5
+            convergence_rotation_threshold: 0.99999 # cos_angle = 0.99999 -> 0.256 degrees
+            convergence_max_iterations_similar_transforms: 3
+            transformation_epsilon: 0.0000001 # sum of squared translations offsets (between registrations)
+            euclidean_fitness_epsilon: 0.000001
+            max_number_of_registration_iterations: 300
+            max_number_of_ransac_iterations: 0
+            ransac_outlier_rejection_threshold: 0.02
+            match_only_keypoints: false
+            display_cloud_aligment: false
+            maximum_number_of_displayed_correspondences: 0
+            rotation_epsilon: 0.002
+            correspondence_randomness: 50
+            maximum_optimizer_iterations: 100
+            use_reciprocal_correspondences: false
+            use_symmetric_objective_cost_function: false
+            ensure_normals_with_same_direction_when_using_symmetric_objective_cost_function: false
+            reference_cloud_publish_topic: 'final_alignment_reference_cloud'
+            convergence_time_limit_seconds_as_mean_convergence_time_percentage: -1.0
+            minimum_number_of_convergence_time_measurements_to_adjust_convergence_time_limit: -1
+
+
+tracking_matchers:
+    ignore_height_corrections: false
+    pose_tracking_timeout: 1.0
+    pose_tracking_minimum_number_of_failed_registrations_since_last_valid_pose: -1
+    pose_tracking_maximum_number_of_failed_registrations_since_last_valid_pose: -1
+    pose_tracking_recovery_timeout: 0.5
+    pose_tracking_recovery_minimum_number_of_failed_registrations_since_last_valid_pose: -1
+    pose_tracking_recovery_maximum_number_of_failed_registrations_since_last_valid_pose: -1

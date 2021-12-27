@@ -1,5 +1,5 @@
 #scanner_id: "2019-04-003-LC3"
-scanner_id: "PhoXi3DScan-jEj-102#"
+scanner_id: "JEJ-102"
 frame_id: "camera_gray_optical_frame"
 latch_topics: true
 topic_queue_size: 1
@@ -17,4 +17,4 @@ send_point_cloud: true
 send_texture: true
 shutter_multiplier: 1
 timeout: -3          # in ms, special parameters: 0 = Zero, -1 = Infinity, -2 = Last stored, -3 = Default
-trigger_mode: 1      # 0 = Free run, 1 = Software
+#trigger_mode: 1      # 0 = Free run, 1 = Software

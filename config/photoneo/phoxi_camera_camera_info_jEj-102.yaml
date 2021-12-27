@@ -1,6 +1,6 @@
 image_width: 2064
 image_height: 1544
-camera_name: "PhoXi3DScan-jEj-102"
+camera_name: "camera" #"PhoXi3DScan-jEj-102"
 camera_matrix:
   rows: 3
   cols: 3

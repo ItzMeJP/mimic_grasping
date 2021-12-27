@@ -12,7 +12,7 @@
 
 
     <!--arg name="scanner_id" default="InstalledExamples-basic-example" /-->
-    <arg name="scanner_id" default="jEj-102" />
+    <arg name="scanner_id" default="JEJ-102" />
 
 
     <arg name="rviz" default="true" />

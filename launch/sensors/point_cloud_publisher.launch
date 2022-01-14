@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <launch>
 
+  <arg name="publisher_file_path" default="$(find mimic_grasping_ros_interface_package)/models/support_bracket.ply" />
+
   <!-- Publish point cloud from file -->
   <node pkg="point_cloud_io" type="read" name="read" output="screen">
-    <!--param name="file_path" value="$(find mimic_grasping_ros_interface_package)/models/received_cloud_single_side_bracket_pose_p1.ply" /-->
-    <param name="file_path" value="$(find mimic_grasping_ros_interface_package)/models/received_cloud_support_bracket_pose_p1.ply" />
+    <param name="file_path" value="$(arg publisher_file_path)" />
     <param name="topic"     value="/publisher/depth/points" />
-    <param name="frame"     value="camera_gray_optical_frame" />
+    <param name="frame"     value="env_frame" />
     <param name="rate"      value="0.5" />
   </node>
 

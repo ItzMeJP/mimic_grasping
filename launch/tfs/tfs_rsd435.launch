@@ -2,9 +2,9 @@
 <launch>
 
   <!--node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_p0"  args=" robot_base tool0 100" /-->
-  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_d435"  args=" -0.016651746849288683 0.23713801801978257 0.1589293391764847 -0.0053121823096013866 -0.7018028633858873 -0.01548127957138288 0.7121831587768082 tool0 camera_color_optical_frame 100" />
-  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_link_c" args="0 0 0 0 0 0 1 camera_color_optical_frame camera_link 100" />
-  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_base_box" args="0 0 0.28 0.6934 -0.6796 -0.1137 0.2109 camera_link cropbox_ref_frame 100" /> <!-- usei o plano do charuco como ref -->
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_d435"  respawn="false" args=" -0.016651746849288683 0.23713801801978257 0.1589293391764847 -0.0053121823096013866 -0.7018028633858873 -0.01548127957138288 0.7121831587768082 tool0 camera_color_optical_frame 100" />
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_link_c" respawn="false" args="0 0 0 0 0 0 1 camera_color_optical_frame camera_link 100" />
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_base_box" respawn="false" args="0 0 0.28 0.6934 -0.6796 -0.1137 0.2109 camera_link cropbox_ref_frame 100" /> <!-- usei o plano do charuco como ref -->
 
 
 </launch>

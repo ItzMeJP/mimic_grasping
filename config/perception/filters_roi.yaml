@@ -6,7 +6,7 @@ filters:
             box_min_y: -0.10
             box_min_z: 0.0
             box_max_x: 0.16
-            box_max_y: 0.10
+            box_max_y: 0.14
             box_max_z: 0.12
             box_rotation_roll: 0
             box_rotation_pitch: 0

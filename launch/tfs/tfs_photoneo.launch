@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <launch>
 
-  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_tcp_base_robot_p1" args="0.2308 1.151 0.5481 -0.62920 0.58679 0.36697 0.35372 robot_base tcp 1" />
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_tcp_base_robot_p1"  respawn="false" args="0.2308 1.151 0.5481 -0.62920 0.58679 0.36697 0.35372 robot_base tcp 1" />
 
-  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_base_robot_p1" args="0.11536 1.32497 0.54337 -0.956125 -0.0586915 0.122802 0.259423 robot_base camera_gray_optical_frame 1" />
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_base_robot_p1" respawn="false" args="0.11536 1.32497 0.54337 -0.956125 -0.0586915 0.122802 0.259423 robot_base camera_gray_optical_frame 1" />
 
-  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_cameras" args="0 0 0 0 0 0 1 camera_gray_optical_frame camera_link 1" />
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_cameras" respawn="false" args="0 0 0 0 0 0 1 camera_gray_optical_frame camera_link 1" />
 
   <!--node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_base_robot_p2" args="0.19316 1.38371 0.53281 -0.816352 -0.49286 0.137812 0.267706 robot_base camera_gray_optical_frame 100" /-->
 
   <!--node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_camera_link" args="-0.0839293 0.104623 0.159994 -0.268575 0.100635 -0.649751 0.703963 tcp camera_gray_optical_frame 100" /-->
-  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_cropbox_robot_base" args="0 1.52 0.078 0 0 0 1 robot_base cropbox_ref_frame 1" />
+  <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_cropbox_robot_base" respawn="false" args="0 1.52 0.078 0 0 0 1 robot_base cropbox_ref_frame 1" />
 
 
 </launch>

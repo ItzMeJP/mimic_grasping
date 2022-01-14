@@ -1,0 +1,6 @@
+transformation_aligner:
+    anchor_tf_frame_id: "camera_link"                                   # Frame id that can be either the [ map_frame_id ] or [ base_link_frame_id ] above, and that specifies in which side of the TF tree the [ rotation_alignment_frame_id ] is closer (for example, if you have a table tf attached to camera_link and drl is estimating the pose of the object in relation to camera_link, then the anchor_tf_frame_id should be camera_link -> this is required for not including in the tf lookupTransform the chain that is being estimated by drl)
+    rotation_alignment_frame_id: "robot_base"     # External TF reference frame for correcting the alignment around the symmetry axis
+    correct_roll: false                                                 # Corrects the object roll so that the object Z axis aligns as much as possible with the rotation_alignment_frame Z axis
+    correct_pitch: false                                                # Corrects the object pitch so that the object Z axis aligns as much as possible with the rotation_alignment_frame Z axis
+    correct_yaw: true                                                   # Corrects the object yaw so that the object X axis aligns as much as possible with the rotation_alignment_frame X axis

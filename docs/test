@@ -1,4 +1,4 @@
-roslaunch mimic_grasping run.launch
+roslaunch mimic_grasping run.launch use_publisher:=true
 
 rostopic pub /object_recognition/ObjectRecognitionSkill/goal object_recognition_skill_msgs/ObjectRecognitionSkillActionGoal "header:
   seq: 0
@@ -18,3 +18,26 @@ goal:
 https://github.com/inesc-tec-robotics/dynamic_robot_localization#installation-from-source
 
 https://github.com/carlosmccosta/object_recognition
+
+
+---------------------------------------------------------------------------------------------
+
+
+roslaunch mimic_grasping_ros_interface_package run.launch use_photoneo:=true
+
+rosservice call /object_recognition/phoxi_camera/get_frame "in_: -1"
+
+rostopic pub /object_recognition/ObjectRecognitionSkill/goal object_recognition_skill_msgs/ObjectRecognitionSkillActionGoal "header:
+  seq: 0
+  stamp:
+    secs: 0
+    nsecs: 0
+  frame_id: ''
+goal_id:
+  stamp:
+    secs: 0
+    nsecs: 0
+  id: ''
+goal:
+  objectModel: 'single_side_bracket.ply'
+  clusterIndex: 0"

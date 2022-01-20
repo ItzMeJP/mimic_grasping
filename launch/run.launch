@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <launch>
 
+  <!-- Para compensar simetria no OR-->
+    <arg name="use_transformation_aligner" default="false" />
+
+
     <arg name="use_cad_matching" default="true" />
     <arg name="namespace" default="object_recognition" />
 
@@ -52,6 +56,7 @@
       <arg name="use_publisher" default="$(arg use_publisher)" />
       <arg name="use_rsd435" default="$(arg use_rsd435)" />
       <arg name="enable_respawn" default="$(arg enable_respawn)" />
+      <arg name="use_transformation_aligner" default="$(arg use_transformation_aligner)" />
     </include>
 
     <group ns="$(arg namespace)">

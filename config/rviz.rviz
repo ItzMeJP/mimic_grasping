@@ -99,11 +99,11 @@ Visualization Manager:
         object:
           Value: true
         object__feature_matching:
-          Value: true
+          Value: false
         object__intermediate_point_matching:
-          Value: true
+          Value: false
         object__point_matching:
-          Value: true
+          Value: false
         robot_base:
           Value: true
         tcp:
@@ -823,7 +823,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.4463924169540405
+      Distance: 0.4257294237613678
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -839,9 +839,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.4497967958450317
+      Pitch: 0.5197979807853699
       Target Frame: cropbox_ref_frame
-      Yaw: 2.0701160430908203
+      Yaw: 3.8301103115081787
     Saved: ~
 Window Geometry:
   Displays:
